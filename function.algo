@@ -1,0 +1,56 @@
+FUNCTION dot_product(VAR v1:ARRAY, v2:ARRAY)
+VAR
+   var i:INTEGER;
+   var s:INTEGER;
+   sum:=0;
+BEGIN
+   FOR i FROM 0 TO v1.lenght DO
+       sum:=sum+v1[i]*v2[i];
+   END_FOR
+   IF (sum=0) THEN
+    RETURN True;
+   ELSE
+   RETURN false;
+   END_IF
+END
+
+ALGORITHM Dot_product
+VAR
+ v1 : ARRAY_OF INTEGER[50];  
+ v2 : ARRAY_OF INTEGER[50];
+ n: INTEGER :=0;
+  sum: INTEGER :=0;
+
+ check: BOOLEAN;
+
+BEGIN
+
+//v1 and v2
+REPEAT
+    Write("sze of v1 and v2 ");
+    Read(n);
+UNTIL (n>0 AND n<=10)
+
+
+//fill the v1 and v2
+ FOR i FROM 0 TO n-1 DO
+       Read(v1[i]);
+   END_FOR
+
+ FOR i FROM 0 TO n-1 DO
+       Read(v2[i]);
+   END_FOR
+
+   //redirect the v1 and v2 to the function and return true (sum=0) or false
+
+check:= dot_product(v1, v2);
+
+END_FOR
+
+
+   IF (check = true) THEN
+    Write("orthogonaux");
+   ELSE IF( check = false) THEN 
+  Write("not orthogonaux");
+   END_IF
+END
